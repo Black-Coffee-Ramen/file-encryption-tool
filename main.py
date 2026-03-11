@@ -1,16 +1,15 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
+from file_encryption_tool import FileEncryptionTool
 
-class FileEncryptionApp(QMainWindow):
-    def __init__(self):
-        super().__init__()
-
-        self.setWindowTitle("File Encryption Tool")
-        self.setGeometry(100, 100, 400, 400)
-        # Add your GUI components and functionality here
+def main():
+    app = QApplication(sys.argv)
+    
+    # Optional: Set application-wide font or style here
+    
+    window = FileEncryptionTool()
+    window.show()
+    sys.exit(app.exec_())
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    tool = FileEncryptionApp()
-    tool.show()
-    sys.exit(app.exec_())
+    main()
